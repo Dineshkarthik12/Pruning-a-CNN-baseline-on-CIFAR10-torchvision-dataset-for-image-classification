@@ -1,0 +1,32 @@
+[
+  {
+    "lambda_label": "None (0.0)",
+    "lambda": 0.0,
+    "test_accuracy": 81.47,
+    "sparsity_pct": 1.77
+  },
+  {
+    "lambda_label": "Low (1e-4)",
+    "lambda": 0.0001,
+    "test_accuracy": 81.58,
+    "sparsity_pct": 88.83
+  },
+  {
+    "lambda_label": "Medium (1e-3)",
+    "lambda": 0.001,
+    "test_accuracy": 81.2,
+    "sparsity_pct": 96.24
+  },
+  {
+    "lambda_label": "High (1e-2)",
+    "lambda": 0.01,
+    "test_accuracy": 72.06,
+    "sparsity_pct": 99.61
+  },
+  {
+    "lambda_label": "Very High (5e-2)",
+    "lambda": 0.05,
+    "test_accuracy": 35.15,
+    "sparsity_pct": 99.98
+  }
+]
