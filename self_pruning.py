@@ -335,6 +335,12 @@ def main():
         print(f"\n  > Final  Test Acc: {final_test_acc:.2f}%  "
               f"Sparsity: {final_sparsity:.2f}%", flush=True)
 
+        # Save the model
+        model_filename = f"model_{label.replace(' ', '_').replace('(', '').replace(')', '')}.pth"
+        model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), model_filename)
+        torch.save(model.state_dict(), model_path)
+        print(f"  > Model saved to {model_filename}\n", flush=True)
+
         results.append({
             "lambda_label": label,
             "lambda": lam,
