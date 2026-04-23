@@ -31,11 +31,11 @@ A gate is considered "pruned" if its final sigmoid value falls below a strict th
 
 | Lambda Level | Penalty (λ) | Test Accuracy | Sparsity Level (%) |
 | :--- | :--- | :--- | :--- |
-| None | 0.0 | 81.47% | 1.77% |
-| Low | 1e-4 | 81.58% | 88.83% |
-| Medium | 1e-3 | 81.20% | 96.24% |
-| High | 1e-2 | 72.06% | 99.61% |
-| Very High | 5e-2 | 35.15% | 99.98% |
+| None | 0.0 | 81.81% | 1.90% |
+| Low | 1e-4 | 81.10% | 88.62% |
+| Medium | 1e-3 | 81.73% | 96.19% |
+| High | 1e-2 | 72.33% | 99.64% |
+| Very High | 5e-2 | 30.54% | 99.99% |
 
 ### Analysis
 
@@ -62,3 +62,4 @@ The script will download CIFAR-10 into a local `/data` directory automatically, 
 Upon completion, it dynamically generates:
 - `results.json`: A data export of the metrics.
 - `gate_distribution.png`: The visual histogram analysis of the final gate values.
+- Model files: Trained model weights are saved for each lambda level (e.g., `model_None_0.0.pth`, `model_Low_1e-4.pth`, `model_Medium_1e-3.pth`, `model_High_1e-2.pth`, `model_Very_High_5e-2.pth`).

@@ -2,31 +2,31 @@
   {
     "lambda_label": "None (0.0)",
     "lambda": 0.0,
-    "test_accuracy": 81.47,
-    "sparsity_pct": 1.77
+    "test_accuracy": 81.81,
+    "sparsity_pct": 1.9
   },
   {
     "lambda_label": "Low (1e-4)",
     "lambda": 0.0001,
-    "test_accuracy": 81.58,
-    "sparsity_pct": 88.83
+    "test_accuracy": 81.1,
+    "sparsity_pct": 88.62
   },
   {
     "lambda_label": "Medium (1e-3)",
     "lambda": 0.001,
-    "test_accuracy": 81.2,
-    "sparsity_pct": 96.24
+    "test_accuracy": 81.73,
+    "sparsity_pct": 96.19
   },
   {
     "lambda_label": "High (1e-2)",
     "lambda": 0.01,
-    "test_accuracy": 72.06,
-    "sparsity_pct": 99.61
+    "test_accuracy": 72.33,
+    "sparsity_pct": 99.64
   },
   {
     "lambda_label": "Very High (5e-2)",
     "lambda": 0.05,
-    "test_accuracy": 35.15,
-    "sparsity_pct": 99.98
+    "test_accuracy": 30.54,
+    "sparsity_pct": 99.99
   }
 ]
