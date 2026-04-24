@@ -49,6 +49,25 @@ A gate is considered "pruned" if its final sigmoid value falls below a strict th
 
 The output plot shows histograms of the final sigmoid gate values for each $\lambda$ run. For runs with active pruning ($\lambda > 0$), there is a massive spike exactly at `0.0` (representing the pruned, dead connections), and a much smaller secondary cluster closer to `1.0` (representing the small fraction of surviving, highly active connections). The baseline run (where $\lambda=0$) shows a smooth distribution hovering around the 0.5 initialization point.
 
+## Key Learnings
+
+- **Sparsity-Accuracy Trade-off**: I learned that dense layers in standard CNN models are often highly over-parameterized. By introducing an L1 sparsity penalty on learnable gates, it's possible to prune a massive percentage of connections (over 90%) without significantly impacting test accuracy.
+- **Dynamic Pruning**: Implementing a custom `PrunableLinear` layer taught me how to modify standard PyTorch modules and manipulate gradients to achieve dynamic, on-the-fly network pruning during training.
+- **Regularization Effect**: The pruning mechanism also acts as an effective regularizer, which can sometimes even marginally increase generalization accuracy by reducing the model's capacity to overfit.
+
+## Future Works
+
+- **Scaling Computation**: Currently, the model is constrained by local hardware limitations. In the future, with access to better GPUs and higher computational power, I plan to experiment with much deeper and wider network architectures to achieve even higher baseline accuracy on the CIFAR-10 dataset before applying pruning.
+- **Iterative Pruning Strategies**: Exploring iterative pruning with fine-tuning phases rather than a continuous one-pass penalty to see if even more aggressive sparsity can be achieved with zero accuracy loss.
+- **Hardware Deployment**: Testing the pruned models using inference engines to quantify actual hardware latency and memory footprint reductions on edge devices.
+
+## Interactive Pruning Simulation (Frontend)
+
+To make the results more tangible, I have built an interactive web dashboard that visualizes the neural network's pruning process in real-time.
+
+You can view the live simulation here:
+**[Live Demo on Vercel](https://pruning-a-cnn-baseline-on-cifar-10-torchvision-datas-qrdbkk4im.vercel.app)**
+
 ## How to Run
 
 1. Ensure PyTorch and TorchVision are installed in your environment.
