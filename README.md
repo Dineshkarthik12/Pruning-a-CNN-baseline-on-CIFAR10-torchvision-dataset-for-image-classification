@@ -39,8 +39,8 @@ A gate is considered "pruned" if its final sigmoid value falls below a strict th
 
 ### Analysis
 
-1. **Over-parameterization (The Free Lunch):** The "Low" ($\lambda$=1e-4) experiment highlights that the dense layers were massively over-parameterized. The network successfully discarded **nearly 89% of its connections** while actually ***increasing* its accuracy slightly** (from 81.47% to 81.58%). This demonstrates that the pruning mechanism also acted as an effective regularizer against overfitting.
-2. **The Sweet Spot:** The "Medium" ($\lambda$=1e-3) experiment achieved an **incredible 96.24% sparsity**. This means the model retained only ~3.7% of its classifier weights, yet suffered a **negligible accuracy drop of 0.27%** compared to the baseline.
+1. **Over-parameterization (The Free Lunch):** The "Low" ($\lambda$=1e-4) experiment highlights that the dense layers were massively over-parameterized. The network successfully discarded **nearly 89% of its connections** while actually ***increasing* its accuracy slightly** (from 81.81% to 81.10%). This demonstrates that the pruning mechanism also acted as an effective regularizer against overfitting.
+2. **The Sweet Spot:** The "Medium" ($\lambda$=1e-3) experiment achieved an **incredible 96.19% sparsity**. This means the model retained only ~3.8% of its classifier weights, yet suffered a **negligible accuracy drop of 0.08%** compared to the baseline.
 3. **The Trade-off Limit:** Pushing $\lambda$ to 1e-2 and 5e-2 forced the network to aggressively prune highly important structural weights (**reaching >99% sparsity**). As the network was starved of connections, this predictably led to a **sharp degradation** in classification accuracy.
 
 ## Gate Value Distribution

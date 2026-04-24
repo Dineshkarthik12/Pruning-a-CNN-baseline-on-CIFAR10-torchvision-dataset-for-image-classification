@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Pruning Network Simulation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Self-Pruning Neural Network</h1>
+            <p>Interactive visualization of weight sparsity vs. accuracy.</p>
+        </header>
+        
+        <main>
+            <div class="controls-panel">
+                <div class="slider-container">
+                    <label for="lambda-slider">Sparsity Penalty (&lambda;)</label>
+                    <input type="range" id="lambda-slider" min="0" max="4" step="1" value="0">
+                    <div class="slider-ticks">
+                        <span>None<br>0.0</span>
+                        <span>Low<br>1e-4</span>
+                        <span>Medium<br>1e-3</span>
+                        <span>High<br>1e-2</span>
+                        <span>Very High<br>5e-2</span>
+                    </div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h3>Test Accuracy</h3>
+                        <div class="metric-value" id="accuracy-val">--%</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Sparsity</h3>
+                        <div class="metric-value" id="sparsity-val">--%</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Active Conns</h3>
+                        <div class="metric-value" id="connections-val">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-panel">
+                <canvas id="network-canvas"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
